@@ -39,6 +39,9 @@ std::vector<double> binomial_pmf(size_t n, double p)
 
 double binomial_pmf(size_t n, size_t r, double p)
 {
+    if(p == 0){
+        return (r == 0) ? 1.0 : 0.0;
+    }
     double q = 1 - p;
     double logq = std::log(q);
     double logp = std::log(p);
